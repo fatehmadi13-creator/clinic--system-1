@@ -1,0 +1,54 @@
+CREATE TABLE IF NOT EXISTS Users (
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  Username TEXT UNIQUE,
+  PasswordHash TEXT,
+  Role TEXT
+);
+
+CREATE TABLE IF NOT EXISTS Patients (
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  FileNumber TEXT UNIQUE,
+  FirstName TEXT,
+  LastName TEXT,
+  DOB TEXT,
+  Phone TEXT,
+  Address TEXT,
+  Notes TEXT
+);
+
+CREATE TABLE IF NOT EXISTS Appointments (
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  PatientId INTEGER,
+  Doctor TEXT,
+  DateTime TEXT,
+  Status TEXT,
+  Notes TEXT,
+  FOREIGN KEY(PatientId) REFERENCES Patients(Id)
+);
+
+CREATE TABLE IF NOT EXISTS Invoices (
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  PatientId INTEGER,
+  Date TEXT,
+  Total REAL,
+  Paid REAL,
+  Method TEXT,
+  Notes TEXT,
+  FOREIGN KEY(PatientId) REFERENCES Patients(Id)
+);
+
+CREATE TABLE IF NOT EXISTS StockItems (
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  Code TEXT UNIQUE,
+  Name TEXT,
+  Qty INTEGER,
+  ReorderLevel INTEGER,
+  Supplier TEXT
+);
+
+CREATE TABLE IF NOT EXISTS LicenseInfo (
+  Id INTEGER PRIMARY KEY,
+  LicenseKey TEXT,
+  ActivatedOn TEXT,
+  ClientName TEXT
+);

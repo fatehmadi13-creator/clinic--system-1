@@ -1,0 +1,25 @@
+<UserControl x:Class="ClinicProApp.Views.AppointmentsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+            <Button Content="حجز موعد جديد" Click="BtnNew_Click" Margin="6"/>
+            <TextBox Name="txtSearch" Width="240" Margin="6"/>
+            <Button Content="بحث" Click="BtnSearch_Click" Margin="6"/>
+            <Button Content="تحديث" Click="BtnRefresh_Click" Margin="6"/>
+        </StackPanel>
+
+        <DataGrid Name="dgAppointments" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="التاريخ/الوقت" Binding="{Binding DateTime}" Width="180"/>
+                <DataGridTextColumn Header="مريض" Binding="{Binding PatientName}" Width="*"/>
+                <DataGridTextColumn Header="طبيب" Binding="{Binding Doctor}" Width="140"/>
+                <DataGridTextColumn Header="حالة" Binding="{Binding Status}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

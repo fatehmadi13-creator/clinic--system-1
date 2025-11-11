@@ -1,0 +1,23 @@
+<UserControl x:Class="ClinicProApp.Views.PatientsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,8">
+            <Button Content="جديد" Click="BtnNew_Click" Margin="4"/>
+            <TextBox Name="txtSearch" Width="220" Margin="6"/>
+            <Button Content="بحث" Click="BtnSearch_Click" Margin="6"/>
+        </StackPanel>
+
+        <DataGrid Name="dgPatients" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="رقم الملف" Binding="{Binding FileNumber}"/>
+                <DataGridTextColumn Header="الاسم" Binding="{Binding FullName}"/>
+                <DataGridTextColumn Header="الهاتف" Binding="{Binding Phone}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,23 @@
+<Window x:Class="ClinicProApp.Views.NewAppointmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="حجز موعد" Height="320" Width="460" WindowStartupLocation="CenterOwner">
+    <Grid Margin="12">
+        <StackPanel>
+            <TextBlock Text="اختر المريض" />
+            <ComboBox Name="cbPatients" DisplayMemberPath="Display" SelectedValuePath="Id" Margin="0,6"/>
+            <TextBlock Text="الطبيب" />
+            <TextBox Name="txtDoctor" Margin="0,6"/>
+            <TextBlock Text="تاريخ ووقت الموعد" />
+            <StackPanel Orientation="Horizontal" Margin="0,6">
+                <DatePicker Name="dpDate" Width="170"/>
+                <TextBox Name="txtTime" Width="110" Margin="6,0"/>
+            </StackPanel>
+            <TextBlock Text="ملاحظات" />
+            <TextBox Name="txtNotes" Height="60" AcceptsReturn="True"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,8">
+                <Button Content="حجز" Width="90" Click="BtnBook_Click" Margin="6"/>
+                <Button Content="إلغاء" Width="90" Click="BtnCancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

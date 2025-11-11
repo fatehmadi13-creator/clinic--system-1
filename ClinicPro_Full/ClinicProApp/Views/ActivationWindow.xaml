@@ -1,0 +1,16 @@
+<Window x:Class="ClinicProApp.Views.ActivationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="تفعيل الترخيص" Height="220" Width="420" WindowStartupLocation="CenterOwner">
+    <Grid Margin="12">
+        <StackPanel>
+            <TextBlock Text="اسم العيادة (ClientName)" />
+            <TextBox Name="txtClient" Margin="0,6"/>
+            <TextBlock Text="مفتاح الترخيص (License Key)" />
+            <TextBox Name="txtLicense" Margin="0,6"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,8">
+                <Button Content="تفعيل" Click="BtnActivate_Click" Width="90" Margin="6,0"/>
+                <Button Content="إلغاء" Click="BtnCancel_Click" Width="90"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

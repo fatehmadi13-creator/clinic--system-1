@@ -1,0 +1,6 @@
+<UserControl x:Class="ClinicProApp.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Grid Margin="12">
+        <TextBlock Text="مرحباً في ClinicPro - لوحة التحكم" FontSize="20" />
+    </Grid>
+</UserControl>

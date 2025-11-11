@@ -1,0 +1,30 @@
+<Window x:Class="ClinicProApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="ClinicPro" Height="720" Width="1100" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="ملف">
+                <MenuItem Header="تبديل الثيم" Click="ToggleTheme_Click"/>
+                <MenuItem Header="خروج" Click="MenuExit_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Background="#f4f7fb">
+                <TextBlock Text="{Binding ClientDisplayName}" FontSize="18" Margin="12"/>
+                <Button Content="لوحة" Click="ShowDashboard_Click" Margin="8"/>
+                <Button Content="المرضى" Click="ShowPatients_Click" Margin="8"/>
+                <Button Content="المواعيد" Click="ShowAppointments_Click" Margin="8"/>
+                <Button Content="الفواتير" Click="ShowBilling_Click" Margin="8"/>
+                <Button Content="المخزون" Click="ShowInventory_Click" Margin="8"/>
+            </StackPanel>
+
+            <ContentControl Grid.Column="1" Name="MainContent" />
+        </Grid>
+    </DockPanel>
+</Window>

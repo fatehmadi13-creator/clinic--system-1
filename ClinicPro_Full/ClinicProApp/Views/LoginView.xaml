@@ -1,0 +1,13 @@
+<Window x:Class="ClinicProApp.Views.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="ClinicPro - تسجيل الدخول" Height="320" Width="420" WindowStartupLocation="CenterScreen">
+    <Grid Margin="12">
+        <StackPanel>
+            <TextBlock Text="ClinicPro" FontSize="20" HorizontalAlignment="Center" />
+            <TextBox Name="txtUsername" Margin="0,8" />
+            <PasswordBox Name="txtPassword" Margin="0,8" />
+            <Button Content="دخول" Click="BtnLogin_Click" Margin="0,8"/>
+            <Button Content="تفعيل الترخيص" Click="BtnActivate_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
